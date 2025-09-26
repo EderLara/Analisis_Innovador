@@ -1,0 +1,108 @@
+MySQL (tabla: transaccion)
+
+DELIMITER $$
+CREATE PROCEDURE poblar_transacciones()
+BEGIN
+  DECLARE i INT DEFAULT 1;
+  WHILE i <= 10000 DO
+    INSERT INTO transaccion (
+      fecha, id_articulo, id_comprador, id_asesor, id_sucursal, id_metodo_pago, cantidad, total
+    ) VALUES (
+      DATE_ADD('2018-01-01', INTERVAL FLOOR(RAND()*2450) DAY),
+      FLOOR(RAND()*100)+1,
+      FLOOR(RAND()*20)+1,
+      FLOOR(RAND()*10)+1,
+      FLOOR(RAND()*5)+1,
+      FLOOR(RAND()*3)+1,
+      FLOOR(RAND()*5)+1,
+      ROUND(RAND()*50+2,2)
+    );
+    SET i = i + 1;
+  END WHILE;
+END$$
+DELIMITER ;
+
+CALL poblar_transacciones();
+
+
+----------------------------------------------------------------------------------------------------------
+
+PostgreSQL (tabla: movimiento):
+
+DO $$
+DECLARE
+  i INTEGER := 1;
+BEGIN
+  FOR i IN 1..10000 LOOP
+    INSERT INTO movimiento (
+      fecha, item_id, persona_id, promotor_id, almacen_id, tipo_pago_id, cantidad, total
+    ) VALUES (
+      '2018-01-01'::date + (random()*2450)::int,
+      (random()*100)::int+1,
+      (random()*20)::int+1,
+      (random()*10)::int+1,
+      (random()*5)::int+1,
+      (random()*3)::int+1,
+      (random()*5)::int+1,
+      round(random()*50+2,2)
+    );
+  END LOOP;
+END$$;
+
+
+----------------------------------------------------------------------------------------------------------
+
+SQL Server (tabla: venta):
+
+DECLARE @i INT = 1
+WHILE @i <= 10000
+BEGIN
+  INSERT INTO venta (
+    fecha, id_bien, id_usuario, id_encargado, id_local, id_instrumento, cantidad, total
+  ) VALUES (
+    DATEADD(day, ABS(CHECKSUM(NEWID())) % 2450, '2018-01-01'),
+    ABS(CHECKSUM(NEWID())) % 100 + 1,
+    ABS(CHECKSUM(NEWID())) % 20 + 1,
+    ABS(CHECKSUM(NEWID())) % 10 + 1,
+    ABS(CHECKSUM(NEWID())) % 5 + 1,
+    ABS(CHECKSUM(NEWID())) % 3 + 1,
+    ABS(CHECKSUM(NEWID())) % 5 + 1,
+    ROUND(RAND()*50+2,2)
+  );
+  SET @i = @i + 1
+END
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+
+Oracle (tabla: operacion):
+
+BEGIN
+  FOR i IN 1..10000 LOOP
+    INSERT INTO operacion (
+      fecha, id_mercancia, id_individuo, id_dependiente, id_establecimiento, id_via_pago, cantidad, total
+    ) VALUES (
+      TO_DATE('2018-01-01', 'YYYY-MM-DD') + TRUNC(DBMS_RANDOM.VALUE(0,2450)),
+      TRUNC(DBMS_RANDOM.VALUE(1,101)),
+      TRUNC(DBMS_RANDOM.VALUE(1,21)),
+      TRUNC(DBMS_RANDOM.VALUE(1,11)),
+      TRUNC(DBMS_RANDOM.VALUE(1,6)),
+      TRUNC(DBMS_RANDOM.VALUE(1,4)),
+      TRUNC(DBMS_RANDOM.VALUE(1,6)),
+      ROUND(DBMS_RANDOM.VALUE(2,52),2)
+    );
+  END LOOP;
+END;
+
+
+----------------------------------------------------------------------------------------------------------
+
+SQLite (tabla: registro):
+
+with open("insert_ventas.sql", "w") as f:
+    for i in range(10000):
+        f.write(
+            f"INSERT INTO registro (fecha, id_producto, id_cliente, id_agente, id_tienda, id_modo_pago, cantidad, total) VALUES ('2018-01-01', {i%100+1}, {i%20+1}, {i%10+1}, {i%5+1}, {i%3+1}, {(i%5)+1}, {round(2+(i%50)+0.11,2)});\n"
+        )

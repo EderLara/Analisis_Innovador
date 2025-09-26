@@ -1,0 +1,113 @@
+MySQL:
+
+-- Tiendas (sucursal)
+INSERT INTO sucursal (nombre, ubicacion) VALUES
+('Central', 'Av. Principal 101'),
+('Norte', 'Calle 45 #67'),
+('Sur', 'Carrera 23 #10'),
+('Este', 'Diagonal 8 #55'),
+('Oeste', 'Transversal 44 #32');
+
+-- Formas de Pago (metodo_pago)
+INSERT INTO metodo_pago (tipo) VALUES
+('Efectivo'), ('Tarjeta'), ('Transferencia');
+
+-- Vendedores (asesores)
+INSERT INTO asesores (nombre, puesto) VALUES
+('Mario Linares', 'Supervisor'),
+('Esther Salas', 'Vendedor'),
+('David Muñoz', 'Ejecutivo'),
+('Sandra Vera', 'Promotor'),
+('Julio Parra', 'Vendedor');
+
+
+PostgreSQL:
+
+-- Tiendas (almacen)
+INSERT INTO almacen (nombre, direccion) VALUES
+('Central', 'Av. Principal 101'),
+('Norte', 'Calle 45 #67'),
+('Sur', 'Carrera 23 #10'),
+('Este', 'Diagonal 8 #55'),
+('Oeste', 'Transversal 44 #32');
+
+-- Formas de Pago (tipo_pago)
+INSERT INTO tipo_pago (nombre) VALUES
+('Efectivo'), ('Tarjeta'), ('Transferencia');
+
+-- Vendedores (promotor)
+INSERT INTO promotor (nombre, cargo) VALUES
+('Mario Linares', 'Supervisor'),
+('Esther Salas', 'Vendedor'),
+('David Muñoz', 'Ejecutivo'),
+('Sandra Vera', 'Promotor'),
+('Julio Parra', 'Vendedor');
+
+SQL Server:
+
+-- Tiendas (local)
+INSERT INTO local (nombre, direccion) VALUES
+('Central', 'Av. Principal 101'),
+('Norte', 'Calle 45 #67'),
+('Sur', 'Carrera 23 #10'),
+('Este', 'Diagonal 8 #55'),
+('Oeste', 'Transversal 44 #32');
+
+-- Formas de Pago (instrumento)
+INSERT INTO instrumento (tipo) VALUES
+('Efectivo'), ('Tarjeta'), ('Transferencia');
+
+-- Vendedores (encargado)
+INSERT INTO encargado (nombre, puesto) VALUES
+('Mario Linares', 'Supervisor'),
+('Esther Salas', 'Vendedor'),
+('David Muñoz', 'Ejecutivo'),
+('Sandra Vera', 'Promotor'),
+('Julio Parra', 'Vendedor');
+
+Oracle:
+-- Tiendas (establecimiento)
+INSERT INTO establecimiento (nombre, ubicacion) VALUES
+('Central', 'Av. Principal 101');
+INSERT INTO establecimiento (nombre, ubicacion) VALUES
+('Norte', 'Calle 45 #67');
+INSERT INTO establecimiento (nombre, ubicacion) VALUES
+('Sur', 'Carrera 23 #10');
+INSERT INTO establecimiento (nombre, ubicacion) VALUES
+('Este', 'Diagonal 8 #55');
+INSERT INTO establecimiento (nombre, ubicacion) VALUES
+('Oeste', 'Transversal 44 #32');
+
+-- Formas de Pago (via_pago)
+INSERT INTO via_pago (modalidad) VALUES ('Efectivo');
+INSERT INTO via_pago (modalidad) VALUES ('Tarjeta');
+INSERT INTO via_pago (modalidad) VALUES ('Transferencia');
+
+-- Vendedores (dependiente)
+INSERT INTO dependiente (nombre, puesto) VALUES ('Mario Linares', 'Supervisor');
+INSERT INTO dependiente (nombre, puesto) VALUES ('Esther Salas', 'Vendedor');
+INSERT INTO dependiente (nombre, puesto) VALUES ('David Muñoz', 'Ejecutivo');
+INSERT INTO dependiente (nombre, puesto) VALUES ('Sandra Vera', 'Promotor');
+INSERT INTO dependiente (nombre, puesto) VALUES ('Julio Parra', 'Vendedor');
+
+
+SQLite:
+
+-- Tiendas
+INSERT INTO tienda (nombre, ubicacion) VALUES ('Central', 'Av. Principal 101');
+INSERT INTO tienda (nombre, ubicacion) VALUES ('Norte', 'Calle 45 #67');
+INSERT INTO tienda (nombre, ubicacion) VALUES ('Sur', 'Carrera 23 #10');
+INSERT INTO tienda (nombre, ubicacion) VALUES ('Este', 'Diagonal 8 #55');
+INSERT INTO tienda (nombre, ubicacion) VALUES ('Oeste', 'Transversal 44 #32');
+
+-- Formas de pago
+INSERT INTO modo_pago (tipo) VALUES ('Efectivo');
+INSERT INTO modo_pago (tipo) VALUES ('Tarjeta');
+INSERT INTO modo_pago (tipo) VALUES ('Transferencia');
+
+-- Vendedores
+INSERT INTO agente (nombre, cargo) VALUES ('Mario Linares', 'Supervisor');
+INSERT INTO agente (nombre, cargo) VALUES ('Esther Salas', 'Vendedor');
+INSERT INTO agente (nombre, cargo) VALUES ('David Muñoz', 'Ejecutivo');
+INSERT INTO agente (nombre, cargo) VALUES ('Sandra Vera', 'Promotor');
+INSERT INTO agente (nombre, cargo) VALUES ('Julio Parra', 'Vendedor');

@@ -1,0 +1,157 @@
+MySQL (tabla: compradores):
+
+INSERT INTO compradores (nombre, correo) VALUES
+('Juan Pérez', 'juan.perez@email.com'),
+('Ana Gómez', 'ana.gomez@email.com'),
+('Carlos Ruiz', 'carlos.ruiz@email.com'),
+('Laura Torres', 'laura.torres@email.com'),
+('Marta Sánchez', 'marta.sanchez@email.com'),
+('Alberto Ramírez', 'alberto.ramirez@email.com'),
+('Rocío Ortega', 'rocio.ortega@email.com'),
+('Iván Castillo', 'ivan.castillo@email.com'),
+('Lucía Vargas', 'lucia.vargas@email.com'),
+('Pedro Jiménez', 'pedro.jimenez@email.com'),
+('Valeria Moreno', 'valeria.moreno@email.com'),
+('José Mejía', 'jose.mejia@email.com'),
+('Sofía Lozano', 'sofia.lozano@email.com'),
+('Miguel Pardo', 'miguel.pardo@email.com'),
+('Carmen Pina', 'carmen.pina@email.com'),
+('Pablo Gil', 'pablo.gil@email.com'),
+('Teresa Díaz', 'teresa.diaz@email.com'),
+('Diego Álvarez', 'diego.alvarez@email.com'),
+('Olga Cano', 'olga.cano@email.com'),
+('Javier Suárez', 'javier.suarez@email.com');
+
+PostgreSQL (tabla: persona)
+
+INSERT INTO persona (nombre, email) VALUES
+('Juan Pérez', 'juan.perez@email.com'),
+('Ana Gómez', 'ana.gomez@email.com'),
+('Carlos Ruiz', 'carlos.ruiz@email.com'),
+('Laura Torres', 'laura.torres@email.com'),
+('Marta Sánchez', 'marta.sanchez@email.com'),
+('Alberto Ramírez', 'alberto.ramirez@email.com'),
+('Rocío Ortega', 'rocio.ortega@email.com'),
+('Iván Castillo', 'ivan.castillo@email.com'),
+('Lucía Vargas', 'lucia.vargas@email.com'),
+('Pedro Jiménez', 'pedro.jimenez@email.com'),
+('Valeria Moreno', 'valeria.moreno@email.com'),
+('José Mejía', 'jose.mejia@email.com'),
+('Sofía Lozano', 'sofia.lozano@email.com'),
+('Miguel Pardo', 'miguel.pardo@email.com'),
+('Carmen Pina', 'carmen.pina@email.com'),
+('Pablo Gil', 'pablo.gil@email.com'),
+('Teresa Díaz', 'teresa.diaz@email.com'),
+('Diego Álvarez', 'diego.alvarez@email.com'),
+('Olga Cano', 'olga.cano@email.com'),
+('Javier Suárez', 'javier.suarez@email.com');
+
+SQL Server (tabla: usuario):
+
+INSERT INTO usuario (nombre, correo) VALUES
+('Juan Pérez', 'juan.perez@email.com'),
+('Ana Gómez', 'ana.gomez@email.com'),
+('Carlos Ruiz', 'carlos.ruiz@email.com'),
+('Laura Torres', 'laura.torres@email.com'),
+('Marta Sánchez', 'marta.sanchez@email.com'),
+('Alberto Ramírez', 'alberto.ramirez@email.com'),
+('Rocío Ortega', 'rocio.ortega@email.com'),
+('Iván Castillo', 'ivan.castillo@email.com'),
+('Lucía Vargas', 'lucia.vargas@email.com'),
+('Pedro Jiménez', 'pedro.jimenez@email.com'),
+('Valeria Moreno', 'valeria.moreno@email.com'),
+('José Mejía', 'jose.mejia@email.com'),
+('Sofía Lozano', 'sofia.lozano@email.com'),
+('Miguel Pardo', 'miguel.pardo@email.com'),
+('Carmen Pina', 'carmen.pina@email.com'),
+('Pablo Gil', 'pablo.gil@email.com'),
+('Teresa Díaz', 'teresa.diaz@email.com'),
+('Diego Álvarez', 'diego.alvarez@email.com'),
+('Olga Cano', 'olga.cano@email.com'),
+('Javier Suárez', 'javier.suarez@email.com');
+
+Oracle (tabla: individuo):
+
+INSERT INTO individuo (nombre, correo) VALUES
+('Juan Pérez', 'juan.perez@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Ana Gómez', 'ana.gomez@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Carlos Ruiz', 'carlos.ruiz@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Laura Torres', 'laura.torres@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Marta Sánchez', 'marta.sanchez@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Alberto Ramírez', 'alberto.ramirez@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Rocío Ortega', 'rocio.ortega@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Iván Castillo', 'ivan.castillo@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Lucía Vargas', 'lucia.vargas@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Pedro Jiménez', 'pedro.jimenez@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Valeria Moreno', 'valeria.moreno@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('José Mejía', 'jose.mejia@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Sofía Lozano', 'sofia.lozano@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Miguel Pardo', 'miguel.pardo@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Carmen Pina', 'carmen.pina@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Pablo Gil', 'pablo.gil@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Teresa Díaz', 'teresa.diaz@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Diego Álvarez', 'diego.alvarez@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Olga Cano', 'olga.cano@email.com');
+INSERT INTO individuo (nombre, correo) VALUES
+('Javier Suárez', 'javier.suarez@email.com');
+
+SQLite (tabla: cliente):
+
+INSERT INTO cliente (nombre, correo) VALUES
+('Juan Pérez', 'juan.perez@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Ana Gómez', 'ana.gomez@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Carlos Ruiz', 'carlos.ruiz@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Laura Torres', 'laura.torres@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Marta Sánchez', 'marta.sanchez@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Alberto Ramírez', 'alberto.ramirez@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Rocío Ortega', 'rocio.ortega@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Iván Castillo', 'ivan.castillo@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Lucía Vargas', 'lucia.vargas@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Pedro Jiménez', 'pedro.jimenez@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Valeria Moreno', 'valeria.moreno@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('José Mejía', 'jose.mejia@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Sofía Lozano', 'sofia.lozano@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Miguel Pardo', 'miguel.pardo@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Carmen Pina', 'carmen.pina@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Pablo Gil', 'pablo.gil@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Teresa Díaz', 'teresa.diaz@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Diego Álvarez', 'diego.alvarez@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Olga Cano', 'olga.cano@email.com');
+INSERT INTO cliente (nombre, correo) VALUES
+('Javier Suárez', 'javier.suarez@email.com');

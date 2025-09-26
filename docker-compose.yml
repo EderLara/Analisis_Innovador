@@ -1,0 +1,64 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: tienda_mx
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: almacen_pg
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "StrongP@ssword1"
+      MSSQL_PID: "Express"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    restart: always
+
+  oracle:
+    image: gvenzl/oracle-xe:21.3.0-slim
+    environment:
+      ORACLE_PASSWORD: "oracle123"
+      APP_USER: "appuser"
+      APP_USER_PASSWORD: "appuserpwd"
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+    restart: always
+
+  sqlite:
+    image: nouchka/sqlite3:latest
+    command: tail -f /dev/null
+    volumes:
+      - ./sqlite/data:/data
+    restart: always
+
+volumes:
+  mysql_data:
+  postgres_data:
+  mssql_data:
+  oracle_data:
