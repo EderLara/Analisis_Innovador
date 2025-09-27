@@ -52,6 +52,7 @@ services:
 
   sqlite:
     image: nouchka/sqlite3:latest
+    user: "${UID}:${GID}"      # <-- Añade esta línea
     command: tail -f /dev/null
     volumes:
       - ./sqlite/data:/data

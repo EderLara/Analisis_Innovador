@@ -14,11 +14,16 @@ INSERT INTO metodo_pago (tipo) VALUES
 
 -- Vendedores (asesores)
 INSERT INTO asesores (nombre, puesto) VALUES
-('Mario Linares', 'Supervisor'),
-('Esther Salas', 'Vendedor'),
-('David Muñoz', 'Ejecutivo'),
-('Sandra Vera', 'Promotor'),
-('Julio Parra', 'Vendedor');
+('Carlos Ruiz', 'Gerente de Ventas'),
+('Laura Pérez', 'Asesor Comercial Senior'),
+('Javier Castro', 'Especialista en Producto'),
+('Ana Soto', 'Ejecutiva de Cuenta'),
+('Ricardo Gómez', 'Consultor Junior'),
+('Camilo Smith', 'Gerente de Zona),
+('Daniela Pérez', 'Asesor Comercial Senior'),
+('Pedro Parquets', 'Especialista en Producto'),
+('Analbys Sotomaria', 'Ejecutiva de Cuenta'),
+('Ricardo Guzmán', 'Consultor Junior');
 
 
 PostgreSQL:
@@ -37,11 +42,16 @@ INSERT INTO tipo_pago (nombre) VALUES
 
 -- Vendedores (promotor)
 INSERT INTO promotor (nombre, cargo) VALUES
-('Mario Linares', 'Supervisor'),
-('Esther Salas', 'Vendedor'),
-('David Muñoz', 'Ejecutivo'),
-('Sandra Vera', 'Promotor'),
-('Julio Parra', 'Vendedor');
+('Elena Marín', 'Asesor de Servicio al Cliente'),
+('Miguel Torres', 'Especialista en Preventa'),
+('Sofía Vidal', 'Jefa de Equipo de Ventas'),
+('Andrés Herrera', 'Representante de Ventas Internas'),
+('Patricia Díaz', 'Asesor Comercial B2B'),
+('David Romero', 'Gerente Regional'),
+('Isabel Núñez', 'Consultor Senior de Implementación'),
+('Felipe Lira', 'Asociado de Desarrollo de Negocios'),
+('Mónica Reyes', 'Analista de Soporte a Ventas'),
+('Jorge Ponce', 'Coordinador de Marketing y Ventas');
 
 SQL Server:
 
@@ -59,11 +69,22 @@ INSERT INTO instrumento (tipo) VALUES
 
 -- Vendedores (encargado)
 INSERT INTO encargado (nombre, puesto) VALUES
-('Mario Linares', 'Supervisor'),
-('Esther Salas', 'Vendedor'),
-('David Muñoz', 'Ejecutivo'),
-('Sandra Vera', 'Promotor'),
-('Julio Parra', 'Vendedor');
+('Pedro Sánchez', 'Ejecutivo de Cuentas Clave'),
+('María Vargas', 'Especialista en eCommerce'),
+('Diego Morales', 'Supervisor de Telemarketing'),
+('Silvia Rojas', 'Gerente de Sucursal'),
+('Fernando Soto', 'Analista de Inteligencia de Mercado'),
+('Adriana Gil', 'Asesor de Retención'),
+('Juan Ríos', 'Desarrollador de Territorio'),
+('Natalia Bravo', 'Consultor de Soluciones'),
+('Roberto Landa', 'Asesor de Postventa'),
+('Claudia Pardo', 'Técnico de Campo'),
+('Emilio Vega', 'Promotor de Ventas'),
+('Daniela Salas', 'Coordinadora de Proyectos'),
+('Hugo Meléndez', 'Asesor Financiero'),
+('Lorena Ramos', 'Ejecutiva de Ventas Corporativas'),
+('Sergio Tello', 'Especialista en Trade Marketing'),
+('Andrea Montes', 'Asesor de Experiencia del Cliente');
 
 Oracle:
 -- Tiendas (establecimiento)

@@ -1,0 +1,81 @@
+-- MySQL:
+
+DELIMITER $$
+CREATE PROCEDURE poblar_transacciones()
+BEGIN
+  DECLARE i INT DEFAULT 1;
+  WHILE i <= 10000 DO
+    INSERT INTO transaccion (
+      fecha, id_articulo, id_comprador, id_asesor, id_sucursal, id_metodo_pago, cantidad, total
+    ) VALUES (
+      DATE_ADD('2018-01-01', INTERVAL FLOOR(RAND()*2450) DAY),
+      FLOOR(RAND()*100)+1,
+      FLOOR(RAND()*20)+1,
+      FLOOR(RAND()*10)+1,
+      FLOOR(RAND()*5)+1,
+      FLOOR(RAND()*3)+1,
+      FLOOR(RAND()*5)+1,
+      ROUND(RAND()*50+2,2)
+    );
+    SET i = i + 1;
+  END WHILE;
+END$$
+DELIMITER ;
+
+CALL poblar_transacciones();
+
+----------------------------------------------------------------------------------------------
+
+-- PostgreSQL:
+
+INSERT INTO movimiento (
+  fecha, item_id, persona_id, promotor_id, almacen_id, tipo_pago_id, cantidad, total
+)
+SELECT
+  -- Genera una fecha aleatoria en un rango de 2450 días
+  '2018-01-01'::date + floor(random() * 2450)::int,
+  -- IDs con random() * N + 1
+  floor(random() * 100) + 1,
+  floor(random() * 20) + 1,
+  floor(random() * 10) + 1,
+  floor(random() * 5) + 1,
+  floor(random() * 3) + 1,
+  -- Cantidad
+  floor(random() * 5) + 1,
+  -- Total
+  round((random() * 50 + 2)::numeric, 2)
+FROM generate_series(1, 10000);
+
+----------------------------------------------------------------------------------------------
+
+-- SQL Server:
+
+USE ventas_sql;
+GO
+
+-- Crea una tabla temporal de 10,000 filas para generar el lote
+WITH Numeros AS (
+    SELECT TOP 10000 ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) as N
+    FROM sys.all_columns a CROSS JOIN sys.all_columns b
+)
+INSERT INTO venta (
+  fecha, id_bien, id_usuario, id_encargado, id_local, id_instrumento, cantidad, total
+)
+SELECT
+  -- Fecha: 
+  DATEADD(day, ABS(CHECKSUM(NEWID())) % 2450, '2018-01-01'),
+  -- IDs: ABS(CHECKSUM(NEWID())) % N + 1
+  ABS(CHECKSUM(NEWID())) % 100 + 1,
+  ABS(CHECKSUM(NEWID())) % 20 + 1,
+  ABS(CHECKSUM(NEWID())) % 10 + 1,
+  ABS(CHECKSUM(NEWID())) % 5 + 1,
+  ABS(CHECKSUM(NEWID())) % 3 + 1,
+  -- Cantidad:
+  ABS(CHECKSUM(NEWID())) % 5 + 1,
+  -- Total: Usamos NEWID() con RAND() para garantizar la aleatoriedad por fila
+  ROUND(RAND(CHECKSUM(NEWID())) * 50 + 2, 2)
+FROM Numeros;
+GO
+
+----------------------------------------------------------------------------------------------
+
