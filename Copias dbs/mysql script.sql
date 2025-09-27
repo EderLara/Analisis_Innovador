@@ -225,3 +225,27 @@ END$$
 DELIMITER ;
 
 CALL poblar_transacciones();
+
+DELIMITER $$
+create view venta_data as 
+select 
+	  a.nombre as productos, 
+    f.cantidad, 
+    a.precio as valor_individual, 
+    m.tipo as forma_pago, 
+    c.nombre as clientes, 
+    t.nombre as tiendas, 
+    v.nombre as vendedores
+from transaccion f 
+inner join articulos a 
+on f.id_articulo = a.id_articulo
+inner join compradores c 
+on f.id_comprador = c.id_comprador
+inner join sucursal t 
+on f.id_sucursal = t.id_sucursal
+inner join asesores v
+on f.id_asesor = v.id_asesor
+inner join metodo_pago m
+on f.id_metodo_pago = m.id_metodo_pago;
+$$ 
+DELIMITER;
