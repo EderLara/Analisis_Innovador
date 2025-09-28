@@ -228,3 +228,19 @@ SELECT
   ROUND(RAND(CHECKSUM(NEWID())) * 50 + 2, 2)
 FROM Numeros;
 GO
+
+CREATE VIEW venta_data AS
+SELECT
+    a.nombre AS productos,
+    f.cantidad,
+    a.precio AS valor_individual,
+    m.tipo AS forma_pago,
+    c.nombre AS clientes,
+    t.nombre AS tiendas,
+    v.nombre AS vendedores
+FROM venta f
+INNER JOIN bienes a ON f.id_bien = a.id_bien
+INNER JOIN usuario c ON f.id_usuario = c.id_usuario
+INNER JOIN local t ON f.id_local = t.id_local
+INNER JOIN encargado v ON f.id_encargado = v.id_encargado
+INNER JOIN instrumento m ON f.id_instrumento = m.id_instrumento;

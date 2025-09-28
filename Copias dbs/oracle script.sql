@@ -248,3 +248,19 @@ BEGIN
     );
   END LOOP;
 END;
+
+CREATE VIEW venta_data AS
+SELECT
+    a.nombre AS productos,
+    f.cantidad,
+    a.precio AS valor_individual,
+    m.modalidad AS forma_pago,
+    c.nombre AS clientes,
+    t.nombre AS tiendas,
+    v.nombre AS vendedores
+FROM operacion f
+INNER JOIN mercancia a ON f.id_mercancia = a.id_mercancia
+INNER JOIN individuo c ON f.id_individuo = c.id_individuo
+INNER JOIN establecimiento t ON f.id_establecimiento = t.id_establecimiento
+INNER JOIN dependiente v ON f.id_dependiente = v.id_dependiente
+INNER JOIN via_pago m ON f.id_via_pago = m.id_via_pago;

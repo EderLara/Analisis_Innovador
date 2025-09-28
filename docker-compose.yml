@@ -49,13 +49,18 @@ services:
     volumes:
       - oracle_data:/opt/oracle/oradata
     restart: always
-
-  sqlite:
-    image: nouchka/sqlite3:latest
-    user: "${UID}:${GID}"      # <-- Añade esta línea
-    command: tail -f /dev/null
+  
+  mariadb:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass_maria
+      MYSQL_DATABASE: tienda_maria
+      MYSQL_USER: user_maria
+      MYSQL_PASSWORD: secret_maria
+    ports:
+      - "3307:3306"  # Mapeo puerto 3307 host a 3306 contenedor para no chocar con MySQL
     volumes:
-      - ./sqlite/data:/data
+      - mariadb_data:/var/lib/mysql
     restart: always
 
 volumes:
@@ -63,3 +68,4 @@ volumes:
   postgres_data:
   mssql_data:
   oracle_data:
+  mariadb_data:

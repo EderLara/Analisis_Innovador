@@ -1,5 +1,5 @@
-CREATE DATABASE almacen_pg;
-\c almacen_pg
+-- CREATE DATABASE almacen_pg;
+-- \c almacen_pg
 
 CREATE TABLE items (
     item_id SERIAL PRIMARY KEY,
@@ -93,7 +93,7 @@ INSERT INTO promotor (nombre, cargo) VALUES
 
 -- Productos (items)
 INSERT INTO items -- cambiar el nombre de acuerdo a la base de datos
-(nombre, descripcion, precio) VALUES
+(nombre, detalle, valor) VALUES
 ('Cepillo Dental', 'Cepillo de dientes de cerdas suaves', 1544.24),
 ('Jabón Líquido', 'Jabón líquido antibacterial', 2021.88),
 ('Papel Higiénico', 'Paquete de 12 rollos', 3622.50),
@@ -215,3 +215,20 @@ SELECT
   -- Total
   round((random() * 50 + 2)::numeric, 2)
 FROM generate_series(1, 10000);
+
+
+CREATE VIEW venta_data AS
+SELECT
+    a.nombre AS productos,
+    f.cantidad,
+    a.valor AS valor_individual,
+    m.nombre AS forma_pago,
+    c.nombre AS clientes,
+    t.nombre AS tiendas,
+    v.nombre AS vendedores
+FROM movimiento f
+INNER JOIN items a ON f.item_id = a.item_id
+INNER JOIN persona c ON f.persona_id = c.persona_id
+INNER JOIN almacen t ON f.almacen_id = t.almacen_id
+INNER JOIN promotor v ON f.promotor_id = v.promotor_id
+INNER JOIN tipo_pago m ON f.tipo_pago_id = m.tipo_pago_id;
