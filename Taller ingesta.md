@@ -8,7 +8,7 @@
     * Breve repaso de la arquitectura multibase.
     * Verificación de conexiones a cada motor desde DBeaver.
     * Revisión de esquemas, tablas y vistas disponibles.
-    
+
 2. **Consultas SQL y extracción de información**
     * Consulta: listar los productos más vendidos y los clientes top con SQL en MINIMO 2 motores distintos.
     * Consulta: ventas totales por forma de pago y por tienda.
@@ -17,5 +17,5 @@
 
 3. **Reflexión y reporte final** 
     * Breve resumen de dificultades encontradas y cómo se resolvieron (Discusion en el aula).
-    * Elaboración de breve informe escrito (máx. 1 página), adjuntando capturas relevantes.
-    * Entrega de archivos .sql usados y productos gráficos generados.
+    * Elaboración de breve informe escrito, adjuntando capturas relevantes.
+    * Entrega de archivos .sql usados y productos generados.
