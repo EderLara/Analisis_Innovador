@@ -21,3 +21,4 @@
     * Breve resumen de dificultades encontradas y cómo se resolvieron (Discusion en el aula).
     * Elaboración de breve informe escrito, adjuntando capturas relevantes.
     * Entrega de archivos .sql usados y productos generados.
+
