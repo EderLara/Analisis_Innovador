@@ -45,4 +45,4 @@ BEGIN
 
     -- Cerramos el cursor después de terminar el recorrido
     CLOSE item_set;
-END
+END;
